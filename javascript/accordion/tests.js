@@ -1,8 +1,9 @@
 $(document).ready(function(){
-  module("Accordion tests");
+  // module("Accordion tests");
 
   test("example test", function() {
     ok(true);
   });
 
 });
+

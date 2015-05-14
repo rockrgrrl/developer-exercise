@@ -1,6 +1,35 @@
-require 'test/unit'
+# require 'test/unit'
+require 'minitest/autorun'
 
-class WhereTest < Test::Unit::TestCase
+# return as array
+# iterate through array of hashes
+# compare values of search hash with values of each hash in array
+# check for Regexp =~
+
+module ArrayMod 
+  def where(search)
+    self.find_all do |item|
+      matched = true
+      search.each do |key, value|
+        if search[key].is_a? Regexp 
+          matched = false  if item[key] !~ search[key]
+        else
+          matched = false if item[key] != search[key]
+        end
+      end
+      matched
+    end
+  end
+
+end  
+ 
+class Array
+  include ArrayMod
+end
+
+# class WhereTest < Test::Unit::TestCase
+class WhereTest < Minitest::Test
+    
   def setup
     @boris   = {:name => 'Boris The Blade', :quote => "Heavy is good. Heavy is reliable. If it doesn't work you can always hit them.", :title => 'Snatch', :rank => 4}
     @charles = {:name => 'Charles De Mar', :quote => 'Go that way, really fast. If something gets in your way, turn.', :title => 'Better Off Dead', :rank => 3}
@@ -9,9 +38,9 @@ class WhereTest < Test::Unit::TestCase
     
     @fixtures = [@boris, @charles, @wolf, @glen]
   end
-  
+
   def test_where_with_exact_match
-    assert_equal [@wolf], @fixtures.where(:name => 'The Wolf'),
+    assert_equal [@wolf], @fixtures.where(:name => 'The Wolf')
   end
   
   def test_where_with_partial_match

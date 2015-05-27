@@ -1,12 +1,38 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
                     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-</head>
-<body>
+  <head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/backgrid.css" rel="stylesheet">
+    <link href="css/backgrid-paginator.css" rel="stylesheet">
+    <link href="css/backgrid-filter.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group form-inline">
+              <label>Filter by Theme:</label>
+              <select id="select-filter" class="form-control"></select>
+            </div> 
+            <div id="quote-list"></div>
+            <div id="paginator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</body>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/backbone.paginator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backgrid.js/0.3.5/backgrid.js"></script>
+    <script src="js/backgrid-paginator.min.js"></script>
+    <script src="js/backgrid-filter.js"></script>
+    <script src="js/backgrid-select-filter.js"></script>
+    <script src="quotes.js"></script>
+  </body>
 </html>
+
